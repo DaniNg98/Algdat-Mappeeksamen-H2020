@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd01bd83-09e7-4ec5-b1a1-1a99b3b102e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mappeeksamen.bundle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +49,29 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="EksamenTest.oppgave1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EksamenH2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="no.oslomet.cs.algdat.Eksamen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="no.oslomet.cs.algdat.Eksamen" />
+      <option name="MAIN_CLASS_NAME" value="no.oslomet.cs.algdat.Eksamen.EksamenTest" />
+      <option name="METHOD_NAME" value="oppgave1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.EksamenTest.oppgave1" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -62,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603283919459</updated>
-      <workItem from="1603283920602" duration="1561000" />
+      <workItem from="1603283920602" duration="2328000" />
     </task>
     <servers />
   </component>

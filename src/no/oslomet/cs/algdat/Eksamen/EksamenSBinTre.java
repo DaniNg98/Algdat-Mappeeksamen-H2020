@@ -97,7 +97,8 @@ public class EksamenSBinTre<T> {
 
         // p er nå null, dvs. ute av treet, q er den siste vi passerte
 
-        p = new Node<>(verdi);                   // oppretter en ny node
+        // Sørger for at referansen q(forelder) får korrekt verdi i hver node
+        p = new Node<>(verdi, q);                   // oppretter en ny node
 
         if (q == null) rot = p;                  // p blir rotnode
         else if (cmp < 0) q.venstre = p;         // venstre barn til q
