@@ -49,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EksamenTest.oppgave2">
+  <component name="RunManager" selected="JUnit.EksamenTest.oppgave3">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="no.oslomet.cs.algdat.Eksamen.Main" />
       <module name="EksamenH2020" />
@@ -95,8 +95,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EksamenTest.oppgave3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EksamenH2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="no.oslomet.cs.algdat.Eksamen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="no.oslomet.cs.algdat.Eksamen" />
+      <option name="MAIN_CLASS_NAME" value="no.oslomet.cs.algdat.Eksamen.EksamenTest" />
+      <option name="METHOD_NAME" value="oppgave3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EksamenTest.oppgave3" />
         <item itemvalue="JUnit.EksamenTest.oppgave2" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.EksamenTest.oppgave1" />
@@ -114,7 +131,9 @@
       <option name="presentableId" value="Default" />
       <updated>1603283919459</updated>
       <workItem from="1603283920602" duration="3748000" />
-      <workItem from="1603321727427" duration="4033000" />
+      <workItem from="1603321727427" duration="5104000" />
+      <workItem from="1603327198694" duration="203000" />
+      <workItem from="1603366496628" duration="5613000" />
     </task>
     <servers />
   </component>
@@ -126,7 +145,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
