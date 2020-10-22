@@ -1,6 +1,7 @@
 package no.oslomet.cs.algdat.Eksamen;
 
 
+import java.sql.Date;
 import java.util.*;
 
 public class EksamenSBinTre<T> {
@@ -132,18 +133,13 @@ public class EksamenSBinTre<T> {
 
             // Hvis verdi er mindre enn p sin verdi. Gå til venstre
             if (cmp < 0) {
-                if (cmp == 0) {
-                    teller++;
-                }
+                // Flytter pekeren til venstre barn
                 p = p.venstre;
-            }
-            // Hvis verdi er større 0. Gå til høyre
-            else if (cmp > 0) {
-                if (cmp == 0) {
-                    teller++;
-                }
+            } else {
+                // Øker telleren hvis verdi er lik p sin verdi
+                if (cmp == 0) teller++;
+                // Flytter pekeren til høyre barn
                 p = p.høyre;
-
             }
         }
         return teller;
