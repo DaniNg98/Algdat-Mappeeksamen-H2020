@@ -119,7 +119,34 @@ public class EksamenSBinTre<T> {
     }
 
     public int antall(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        // Setter en peker på rot roden
+        Node<T> p = rot;
+        // Teller
+        int teller = 0;
+
+        // Starter på toppen av treet
+        while (p != null) {
+
+            // Sammenlikner p sin verdi med vår verdi
+            int cmp = comp.compare(verdi, p.verdi);
+
+            // Hvis verdi er mindre enn p sin verdi. Gå til venstre
+            if (cmp < 0) {
+                if (cmp == 0) {
+                    teller++;
+                }
+                p = p.venstre;
+            }
+            // Hvis verdi er større 0. Gå til høyre
+            else if (cmp > 0) {
+                if (cmp == 0) {
+                    teller++;
+                }
+                p = p.høyre;
+
+            }
+        }
+        return teller;
     }
 
     public void nullstill() {
