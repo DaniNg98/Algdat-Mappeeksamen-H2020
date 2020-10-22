@@ -151,44 +151,53 @@ public class EksamenSBinTre<T> {
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
 
-       Objects.requireNonNull(p);
-
-       Node<T> f = p.forelder;
-
-       if (p.venstre == null && p.høyre == null) {
-           return p;
-       }
-
-        if (p.venstre != null) {
+        // Hvis p.venstre eksisterer. Flytt p til p.venstre
+        while (p.venstre != null) {
             p = p.venstre;
-        } else if (f.høyre == p) {
-            p = f;
+            // Hvis p ikke har barn. Returner p
+            if (p.venstre == null && p.høyre == null) {
+                return p;
+                // Hvis har høyre barn, men ikke venstre barn. Flytt p til p.høyre
+            } else if (p.venstre == null) {
+                p = p.høyre;
+            }
         }
+        return p;
 
-       return p;
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
+
+
         Objects.requireNonNull(p);
 
         Node<T> f = p.forelder;
 
-        if (f == null) {
-            return p;
-        }
-
+        // Hvis p er høyre barn til sin forelder f, er forelder f den neste.
         if (p == f.høyre) {
-            return f;
+            p = f;
         }
 
-        if (p == f.venstre && f.høyre == null) {
-            return f;
-        } else if (p == f.venstre) {
-            f = f.høyre;
-            p = f.høyre.venstre;
-            return p;
+        // HVis p er venstre barn
+        if (p == f.venstre) {
+            // Hvis p er enebarn
+            if (f.høyre == null) {
+                p = f;
+
+                // Hvis p ikke er enebarn
+            } else {
+                f = f.høyre;
+                while (f.venstre != null) {
+                    p = f.venstre;
+                }
+            }
         }
         return p;
+
+
+
+
+
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
