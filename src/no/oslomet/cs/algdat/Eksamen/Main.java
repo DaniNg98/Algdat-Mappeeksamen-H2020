@@ -16,5 +16,6 @@ public class Main {
             tre1.leggInn(verdi);
         }
         System.out.println(tre1.antall());
+
     }
 }

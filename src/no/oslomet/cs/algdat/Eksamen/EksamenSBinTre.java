@@ -1,6 +1,8 @@
 package no.oslomet.cs.algdat.Eksamen;
 
 
+import org.w3c.dom.xpath.XPathResult;
+
 import java.sql.Date;
 import java.util.*;
 
@@ -168,35 +170,47 @@ public class EksamenSBinTre<T> {
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
 
-
-        Objects.requireNonNull(p);
-
-        Node<T> f = p.forelder;
-
-        // Hvis p er høyre barn til sin forelder f, er forelder f den neste.
-        if (p == f.høyre) {
-            p = f;
+        /*
+        // Hvis p er høyre barn til sine foreldre f, er forelderen f den neste
+        if (p.forelder.høyre != null) {
+            p = p.forelder;
+            p.forelder = p.forelder.forelder;
+        } else if (p.forelder.venstre != null) {
+            p.forelder = p.forelder.høyre;
+            p = p.forelder.høyre;
+            while (p.høyre != null) {
+                p = p.høyre;
+            }
+        } else {
+            p = p.forelder;
         }
 
-        // HVis p er venstre barn
-        if (p == f.venstre) {
-            // Hvis p er enebarn
-            if (f.høyre == null) {
-                p = f;
+        return p;
 
-                // Hvis p ikke er enebarn
+         */
+
+        // Hvis p er rotnoden, så er p den siste i postorden.
+        if (p.forelder == null) {
+            return null;
+        }
+        // Hvis p er høyre barn til sin forelder f, er forelderen f den nesten
+        else if (p.forelder.høyre != null){
+            p = p.forelder;
+        }
+        // Hvis p er venstre barn til sin forelder f
+        else if (p.forelder.venstre != null){
+            // Hvis p er enebarn, er forelderen f den neste
+            if (p.forelder.høyre == null) {
+                p = p.forelder;
             } else {
-                f = f.høyre;
-                while (f.venstre != null) {
-                    p = f.venstre;
+                Node<T> current = p;
+                while (current != null) {
+                    p.forelder = p.forelder.høyre;
+                    current = p.forelder.venstre;
                 }
             }
         }
         return p;
-
-
-
-
 
     }
 
