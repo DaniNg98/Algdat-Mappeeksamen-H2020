@@ -186,12 +186,15 @@ public class EksamenSBinTre<T> {
                     // Hvis p sin f.høyre finnes. Da er f.høyre den neste
                     p = f.høyre;
 
-                    while (f.venstre != null) {
-                        p = f.venstre;
-                        Node<T> current = p;
-                        while (current != null) {
-                            p.forelder = p.forelder.høyre;
-                            current = p.forelder.venstre;
+                    // Traverserer ned f.høyre sitt subtre. Den neste er noden
+                    // vi lander på som ikke har noen barn
+                    while (p.venstre != null || p.høyre != null) {
+                        // Flytter peker til venstre barn hvis den eksisterer
+                        if (p.venstre != null) {
+                            p = p.venstre;
+                        } else {
+                            // Flytter peker til høyre barn hvis den eksisterer¢
+                            p = p.høyre;
                         }
                     }
                 }
