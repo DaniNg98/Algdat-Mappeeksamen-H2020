@@ -170,23 +170,37 @@ public class EksamenSBinTre<T> {
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
 
-        // Hvis p er venstre barn til sin forelder f og p er enebarn
-        if (p.forelder == null) {
+        // Forelder noden til p
+        Node <T> f = p.forelder;
+
+        // Hvis p sin forelder ikke er null
+        if (f != null) {
+            // Hvis p er høyre barn til sin forelder f, er forelderen f den nesten
+            if (p == f.høyre){
+                p = f;
+            } else {
+                // Hvis p sin f.høyre ikke finnes. Da er f den neste
+                if (f.høyre == null) {
+                    p = f;
+                } else {
+                    // Hvis p sin f.høyre finnes. Da er f.høyre den neste
+                    p = f.høyre;
+
+                    while (f.venstre != null) {
+                        p = f.venstre;
+                        Node<T> current = p;
+                        while (current != null) {
+                            p.forelder = p.forelder.høyre;
+                            current = p.forelder.venstre;
+                        }
+                    }
+                }
+
+            }
+        } else {
+            // Hvis p sin forelder er null. Da er vi på den siste noden i post orden.
             return null;
         }
-        // Hvis p er høyre barn til sin forelder f, er forelderen f den nesten
-        else if (p.forelder.høyre != null){
-            return p.forelder;
-        }
-        // Hvis p er venstre barn til sin forelder f og p ikke er enebarn.
-        else if (p.forelder.venstre != null && p.forelder.høyre != null) {
-            return p.forelder.høyre;
-        }
-        else if (p.forelder.venstre != null && p.forelder.høyre == null) {
-            return p.forelder;
-        }
-
-        // Hvis p er rotnoden, så er p den siste i postorden.
         return p;
 
     }
