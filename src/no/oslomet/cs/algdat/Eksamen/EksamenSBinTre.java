@@ -152,16 +152,16 @@ public class EksamenSBinTre<T> {
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
-
         // Hvis p.venstre eksisterer. Flytt p til p.venstre
-        while (p.venstre != null) {
-            p = p.venstre;
+        while (p.venstre != null || p.høyre != null) {
+            if (p.venstre != null) {
+                p = p.venstre;
+            } else {
+                p = p.høyre;
+            }
             // Hvis p ikke har barn. Returner p
             if (p.venstre == null && p.høyre == null) {
                 return p;
-                // Hvis har høyre barn, men ikke venstre barn. Flytt p til p.høyre
-            } else if (p.venstre == null) {
-                p = p.høyre;
             }
         }
         return p;
@@ -170,46 +170,23 @@ public class EksamenSBinTre<T> {
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
 
-        /*
-        // Hvis p er høyre barn til sine foreldre f, er forelderen f den neste
-        if (p.forelder.høyre != null) {
-            p = p.forelder;
-            p.forelder = p.forelder.forelder;
-        } else if (p.forelder.venstre != null) {
-            p.forelder = p.forelder.høyre;
-            p = p.forelder.høyre;
-            while (p.høyre != null) {
-                p = p.høyre;
-            }
-        } else {
-            p = p.forelder;
-        }
-
-        return p;
-
-         */
-
-        // Hvis p er rotnoden, så er p den siste i postorden.
+        // Hvis p er venstre barn til sin forelder f og p er enebarn
         if (p.forelder == null) {
             return null;
         }
         // Hvis p er høyre barn til sin forelder f, er forelderen f den nesten
         else if (p.forelder.høyre != null){
-            p = p.forelder;
+            return p.forelder;
         }
-        // Hvis p er venstre barn til sin forelder f
-        else if (p.forelder.venstre != null){
-            // Hvis p er enebarn, er forelderen f den neste
-            if (p.forelder.høyre == null) {
-                p = p.forelder;
-            } else {
-                Node<T> current = p;
-                while (current != null) {
-                    p.forelder = p.forelder.høyre;
-                    current = p.forelder.venstre;
-                }
-            }
+        // Hvis p er venstre barn til sin forelder f og p ikke er enebarn.
+        else if (p.forelder.venstre != null && p.forelder.høyre != null) {
+            return p.forelder.høyre;
         }
+        else if (p.forelder.venstre != null && p.forelder.høyre == null) {
+            return p.forelder;
+        }
+
+        // Hvis p er rotnoden, så er p den siste i postorden.
         return p;
 
     }

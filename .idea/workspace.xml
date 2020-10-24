@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dd01bd83-09e7-4ec5-b1a1-1a99b3b102e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre$Node.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,9 +115,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.EksamenTest.oppgave3" />
+        <item itemvalue="JUnit.EksamenTest.oppgave1" />
         <item itemvalue="JUnit.EksamenTest.oppgave2" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.EksamenTest.oppgave1" />
       </list>
     </recent_temporary>
   </component>
@@ -139,7 +136,11 @@
       <workItem from="1603327198694" duration="203000" />
       <workItem from="1603366496628" duration="10624000" />
       <workItem from="1603382008808" duration="14720000" />
-      <workItem from="1603408838448" duration="2563000" />
+      <workItem from="1603408838448" duration="4850000" />
+      <workItem from="1603449314882" duration="690000" />
+      <workItem from="1603450033997" duration="4194000" />
+      <workItem from="1603454660329" duration="2289000" />
+      <workItem from="1603552296535" duration="610000" />
     </task>
     <servers />
   </component>
