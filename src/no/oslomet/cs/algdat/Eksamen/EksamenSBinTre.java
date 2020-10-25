@@ -214,6 +214,8 @@ public class EksamenSBinTre<T> {
 
         // Looper igjennom hele treet i postorden
         while (p != null) {
+            // Skriver ut
+            oppgave.utførOppgave(p.verdi);
             // Flytter p til neste postorden
             p = nestePostorden(p);
         }
