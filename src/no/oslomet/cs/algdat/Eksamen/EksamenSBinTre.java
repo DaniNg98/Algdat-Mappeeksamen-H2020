@@ -224,7 +224,20 @@ public class EksamenSBinTre<T> {
     }
 
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
-        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        // Bruker ideen fra metoden printPreorder() fra forelesningen MyBinaryTree
+
+        // Rekursivt gå til venstre
+        if (p.venstre != null) {
+            postordenRecursive(p.venstre, oppgave);
+        }
+
+        // Rekursivt gå til høyre
+        if (p.høyre != null) {
+            postordenRecursive(p.høyre, oppgave);
+        }
+
+        // Skriver ut verdien
+        oppgave.utførOppgave(p.verdi);
     }
 
     public ArrayList<T> serialize() {
