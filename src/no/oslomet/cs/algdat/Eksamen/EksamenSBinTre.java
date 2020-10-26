@@ -243,11 +243,40 @@ public class EksamenSBinTre<T> {
     }
 
     public ArrayList<T> serialize() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        // Lager en ny arraylist
+        ArrayList<T> liste = new ArrayList<>();
+
+        // Legger inn verdier i listen vår i nivåorden ved hjelp av nivåorden()
+        nivåorden(liste);
+
+        // Returnerer
+        return liste;
+
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
+    }
+
+    /////////////////// Hjelpemetoder hentet fra kompendiet //////////////////////////////////////
+
+    // Kopiert inn programkode 5.1.6 a) fra kompendiet. Denne skal brukes i metoden serialize()
+    public void nivåorden()                // skal ligge i class BinTre
+    {
+        if (tom()) return;                   // tomt tre
+
+        Kø<Node<T>> kø = new TabellKø<>();   // Se Avsnitt 4.2.2
+
+        while (!kø.tom())                    // så lenge som køen ikke er tom
+        {
+            Node<T> p = kø.taUt();             // tar ut fra køen
+            System.out.print(p.verdi + " ");   // skriver ut
+
+            if (p.venstre != null) kø.leggInn(p.venstre);
+            if (p.høyre != null) kø.leggInn(p.høyre);
+        }
     }
 
 
