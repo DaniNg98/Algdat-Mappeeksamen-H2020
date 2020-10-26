@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dd01bd83-09e7-4ec5-b1a1-1a99b3b102e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -162,7 +161,7 @@
       <workItem from="1603454660329" duration="2289000" />
       <workItem from="1603552296535" duration="12358000" />
       <workItem from="1603728136704" duration="4573000" />
-      <workItem from="1603741861888" duration="859000" />
+      <workItem from="1603741861888" duration="2019000" />
     </task>
     <servers />
   </component>
