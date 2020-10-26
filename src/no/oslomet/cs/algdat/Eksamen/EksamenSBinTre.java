@@ -250,13 +250,16 @@ public class EksamenSBinTre<T> {
         // Legger inn verdier i listen vår i nivåorden ved hjelp av nivåorden()
         nivåorden(liste);
 
-        // Returnerer
+        // Returnerer liste
         return liste;
-
-        //throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
+        // Henter programkode 5.2.3 c) fra kompendiet.
+        SBinTre<T> tre = new SBinTre<>(c);             // komparatoren c
+        s.forEach(tre::leggInn);                       // bygger opp treet
+        return tre;                                    // treet returneres
+
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
