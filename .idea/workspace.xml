@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dd01bd83-09e7-4ec5-b1a1-1a99b3b102e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,20 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EksamenTest.oppgave4">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="no.oslomet.cs.algdat.Eksamen.Main" />
-      <module name="EksamenH2020" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="no.oslomet.cs.algdat.Eksamen.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.EksamenTest.oppgave5">
     <configuration name="EksamenTest.oppgave1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EksamenH2020" />
       <extension name="coverage">
@@ -129,13 +114,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EksamenTest.oppgave5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EksamenH2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="no.oslomet.cs.algdat.Eksamen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="no.oslomet.cs.algdat.Eksamen" />
+      <option name="MAIN_CLASS_NAME" value="no.oslomet.cs.algdat.Eksamen.EksamenTest" />
+      <option name="METHOD_NAME" value="oppgave5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EksamenTest.oppgave5" />
         <item itemvalue="JUnit.EksamenTest.oppgave4" />
         <item itemvalue="JUnit.EksamenTest.oppgave3" />
         <item itemvalue="JUnit.EksamenTest.oppgave1" />
         <item itemvalue="JUnit.EksamenTest.oppgave2" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +160,7 @@
       <workItem from="1603450033997" duration="4194000" />
       <workItem from="1603454660329" duration="2289000" />
       <workItem from="1603552296535" duration="12358000" />
-      <workItem from="1603728136704" duration="2541000" />
+      <workItem from="1603728136704" duration="4573000" />
     </task>
     <servers />
   </component>

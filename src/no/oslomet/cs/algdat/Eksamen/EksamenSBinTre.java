@@ -257,25 +257,37 @@ public class EksamenSBinTre<T> {
     }
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     /////////////////// Hjelpemetoder hentet fra kompendiet //////////////////////////////////////
 
     // Kopiert inn programkode 5.1.6 a) fra kompendiet. Denne skal brukes i metoden serialize()
-    public void nivåorden()                // skal ligge i class BinTre
+    public void nivåorden(ArrayList liste)
     {
-        if (tom()) return;                   // tomt tre
+        // Treet er tomt
+        if (tom()) return;
 
-        Kø<Node<T>> kø = new TabellKø<>();   // Se Avsnitt 4.2.2
+        // Lager en kø
+        Queue<Node<T>> queue = new LinkedList<>();
+        // Legger inn roten
+        queue.add(rot);
 
-        while (!kø.tom())                    // så lenge som køen ikke er tom
+        // Så lenge køen ikke tom så tar vi ut verdien fra køen
+        // og legger den inn i vår Arraylist
+        while (!queue.isEmpty())
         {
-            Node<T> p = kø.taUt();             // tar ut fra køen
-            System.out.print(p.verdi + " ");   // skriver ut
+            Node<T> p = queue.remove();
 
-            if (p.venstre != null) kø.leggInn(p.venstre);
-            if (p.høyre != null) kø.leggInn(p.høyre);
+            // Legger til den verdien som blir tatt ut fra køen inn i listen vår
+            liste.add(p.verdi);
+
+            if (p.venstre != null) {
+                queue.add(p.venstre);
+            }
+            if (p.høyre != null) {
+                queue.add(p.høyre);
+            }
         }
     }
 
