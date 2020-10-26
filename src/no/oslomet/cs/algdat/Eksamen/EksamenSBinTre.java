@@ -257,6 +257,11 @@ public class EksamenSBinTre<T> {
     }
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
+        // Henter programkode 5.2.3 c) fra kompendiet.
+        SBinTre<T> tre = new SBinTre<>(c);             // komparatoren c
+        s.forEach(tre::leggInn);                       // bygger opp treet
+        return tre;                                    // treet returneres
+
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
