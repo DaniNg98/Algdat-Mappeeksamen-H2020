@@ -185,25 +185,47 @@ public class EksamenSBinTre<T> {
         }
         // p har 2 barn
         else  {
-            Node<T> s = p, r = p.høyre;
 
+            // Skal finne den nestet i inorden
+            // s peker på samme node som p foreløpig
+            // r peker på p sin høyre foreløpig
+            Node<T> s = p;
+            Node<T> r = p.høyre;
+
+            // Løper ned r sin venstre side
             while (r.venstre != null) {
-                // s er forelder til r
-                s = r;
                 r = r.venstre;
             }
 
             // kopierer verdien i r til p
             p.verdi = r.verdi;
+            // flytter pekeren til s til r.forelder
+            s = r.forelder;
 
+            // Hvis s ikke peker på p
             if (s != p) {
+                // Setter s sin venstre peker over til r sin høyre barn
                 s.venstre = r.høyre;
+                // Hvis r.høyre eksisterer
+                if (r.høyre != null) {
+                    // Da blir s sin venstre den nye forelderen til r.høyre.forelder
+                    r.høyre.forelder = s.venstre;
+                }
             }
+            // Hvis s peker på p
             else {
+                // Flytter s sin høyre over til r sin høyre
                 s.høyre = r.høyre;
+                // Hvis r sin høyre eksisterer
+                if (r.høyre != null) {
+                    // Da blir s sin høyre den nye forelderen til r.høyre.forelder
+                    r.høyre.forelder = s.høyre;
+                }
             }
         }
 
+        // Øker endringer
+        endringer++;
         // det er nå én node mindre i treet
         antall--;
         return true;
@@ -213,7 +235,8 @@ public class EksamenSBinTre<T> {
     }
 
     public int fjernAlle(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     public int antall(T verdi) {
