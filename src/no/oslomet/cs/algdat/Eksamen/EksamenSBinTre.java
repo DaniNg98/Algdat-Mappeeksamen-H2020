@@ -116,42 +116,73 @@ public class EksamenSBinTre<T> {
     public boolean fjern(T verdi) {
         // Henter programkode 5.2.8 d) fra kompendiet
 
-        if (verdi == null) return false;  // treet har ingen nullverdier
+        // treet har ingen nullverdier
+        if (verdi == null) return false;
 
-        Node<T> p = rot, q = null;   // q skal være forelder til p
+        // q skal være forelder til p
+        Node<T> p = rot, q = null;
 
-        while (p != null)            // leter etter verdi
+        // leter etter verdi
+        while (p != null)
         {
-            int cmp = comp.compare(verdi,p.verdi);      // sammenligner
-            if (cmp < 0) { q = p; p = p.venstre; }      // går til venstre
-            else if (cmp > 0) { q = p; p = p.høyre; }   // går til høyre
-            else break;    // den søkte verdien ligger i p
+            int cmp = comp.compare(verdi,p.verdi);
+            // går til venstre
+            if (cmp < 0) {
+                q = p;
+                p = p.venstre;
+            }
+            // går til høyre
+            else if (cmp > 0) {
+                q = p;
+                p = p.høyre;
+            }
+            // den søkte verdien ligger i p
+            else break;
         }
-        if (p == null) return false;   // finner ikke verdi
+        // finner ikke verdi
+        if (p == null) return false;
 
-        if (p.venstre == null || p.høyre == null)  // Tilfelle 1) og 2)
-        {
-            Node<T> b = p.venstre != null ? p.venstre : p.høyre;  // b for barn
-            if (p == rot) rot = b;
-            else if (p == q.venstre) q.venstre = b;
-            else q.høyre = b;
+        if (p.venstre == null || p.høyre == null)  { // Tilfelle 1) og 2)
+            // Barne noden
+            Node<T> b;
+            if (p.venstre != null) {
+                b = p.venstre;
+            } else {
+                b = p.høyre;
+            }
+            if (p == rot) {
+                rot = b;
+            }
+            else if (p == q.venstre) {
+                q.venstre = b;
+            }
+            else {
+                q.høyre = b;
+            }
         }
-        else  // Tilfelle 3)
-        {
-            Node<T> s = p, r = p.høyre;   // finner neste i inorden
-            while (r.venstre != null)
-            {
-                s = r;    // s er forelder til r
+        // Tilfelle 3)
+        else  {
+            Node<T> s = p, r = p.høyre;
+
+            while (r.venstre != null) {
+                // s er forelder til r
+                s = r;
                 r = r.venstre;
             }
 
-            p.verdi = r.verdi;   // kopierer verdien i r til p
+            // kopierer verdien i r til p
+            p.verdi = r.verdi;
 
-            if (s != p) s.venstre = r.høyre;
-            else s.høyre = r.høyre;
+            if (s != p) {
+                s.venstre = r.høyre;
+            }
+            else {
+                s.høyre = r.høyre;
+            }
         }
 
-        antall--;   // det er nå én node mindre i treet
+        // det er nå én node mindre i treet
+        antall--;
         return true;
 
 
@@ -159,7 +190,7 @@ public class EksamenSBinTre<T> {
     }
 
     public int fjernAlle(T verdi) {
-        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     public int antall(T verdi) {
