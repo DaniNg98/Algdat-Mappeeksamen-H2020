@@ -142,25 +142,48 @@ public class EksamenSBinTre<T> {
         // finner ikke verdi
         if (p == null) return false;
 
-        if (p.venstre == null || p.høyre == null)  { // Tilfelle 1) og 2)
+        // Hvis vi p ikke har barn eller p h har nøyaktig ett barn
+        if (p.venstre == null || p.høyre == null)  {
             // Barne noden
             Node<T> b;
+
+            // Hvis p har venstre barn. Da blir b venstre barnet til p
             if (p.venstre != null) {
                 b = p.venstre;
-            } else {
+            }
+            // Hvis p ikke har venstre barn. Da blir b høyre barnet til p
+            else {
                 b = p.høyre;
             }
+
+
+            // Hvis p er rotnoden, settes rotreferansen til b
+            // som enten er p.venstre, p.høyre eller null
             if (p == rot) {
                 rot = b;
             }
+
+            // Hvis p er venstre barnet til q
             else if (p == q.venstre) {
+                // q.venstre er forelder til b
                 q.venstre = b;
+                // hvis barnet b eksisterer
+                if (b != null) {
+                    // Setter b.forelder peker til q
+                    b.forelder = q;
+                }
             }
+            // Hvis p ikke er venstre barnet til q
             else {
+                // q.høyre er forelder til b
                 q.høyre = b;
+                // Setter b.forelder peker til q
+                if (b != null) {
+                    b.forelder = q;
+                }
             }
         }
-        // Tilfelle 3)
+        // p har 2 barn
         else  {
             Node<T> s = p, r = p.høyre;
 
