@@ -155,12 +155,13 @@ public class EksamenSBinTre<T> {
             else {
                 b = p.høyre;
             }
-
-
             // Hvis p er rotnoden, settes rotreferansen til b
             // som enten er p.venstre, p.høyre eller null
             if (p == rot) {
                 rot = b;
+                if (b != null) {
+                    b.forelder = null;
+                }
             }
 
             // Hvis p er venstre barnet til q
@@ -189,18 +190,17 @@ public class EksamenSBinTre<T> {
             // Skal finne den nestet i inorden
             // s peker på samme node som p foreløpig
             // r peker på p sin høyre foreløpig
-            Node<T> s = p;
-            Node<T> r = p.høyre;
+            Node<T> s = p, r = p.høyre;
 
             // Løper ned r sin venstre side
             while (r.venstre != null) {
+                s = r;
                 r = r.venstre;
             }
 
             // kopierer verdien i r til p
             p.verdi = r.verdi;
-            // flytter pekeren til s til r.forelder
-            s = r.forelder;
+
 
             // Hvis s ikke peker på p
             if (s != p) {
@@ -224,17 +224,18 @@ public class EksamenSBinTre<T> {
             }
         }
 
-        // Øker endringer
-        endringer++;
         // det er nå én node mindre i treet
         antall--;
+        // Øker endringer
+        endringer++;
         return true;
 
-
-        //throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     public int fjernAlle(T verdi) {
+        if (tom()) {
+            return 0;
+        }
 
         // teller antall slettet
         int antallSlettet = 0;
@@ -277,8 +278,11 @@ public class EksamenSBinTre<T> {
         return teller;
     }
 
+    // Kopierte programkode fra løsningsforslaget til oppgave 2 i avsnitt 5.2.4 fra kompendiet
     public void nullstill() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (!tom()) nullstill(rot);  // nullstiller
+        rot = null; antall = 0;      // treet er nå tomt
+        endringer++;   // treet er endret
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
@@ -431,5 +435,21 @@ public class EksamenSBinTre<T> {
         }
     }
 
+    // Kopierte programkode fra løsningsforslaget til oppgave 2 i avsnitt 5.2.4 fra kompendiet
+    // Hjelpemetode som bruker i nullstill()
+    private void nullstill(Node<T> p)
+    {
+        if (p.venstre != null)
+        {
+            nullstill(p.venstre);      // venstre subtre
+            p.venstre = null;          // nuller peker
+        }
+        if (p.høyre != null)
+        {
+            nullstill(p.høyre);        // høyre subtre
+            p.høyre = null;            // nuller peker
+        }
+        p.verdi = null;              // nuller verdien
+    }
 
 } // ObligSBinTre
