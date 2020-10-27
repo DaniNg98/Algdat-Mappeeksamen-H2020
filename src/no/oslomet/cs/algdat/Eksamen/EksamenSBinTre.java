@@ -235,7 +235,19 @@ public class EksamenSBinTre<T> {
     }
 
     public int fjernAlle(T verdi) {
-        
+
+        // teller antall slettet
+        int antallSlettet = 0;
+
+        // Siden fjern() er en boolean kan vi bruke
+        // en while løkke til å kalle på fjern()
+        // og fjerne alle verdiene fra treet.
+        while (fjern(verdi)) {
+            antallSlettet++;
+        }
+
+        return antallSlettet;
+
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
