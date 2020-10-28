@@ -159,9 +159,11 @@ public class EksamenSBinTre<T> {
             // som enten er p.venstre, p.høyre eller null
             if (p == rot) {
                 rot = b;
+
                 if (b != null) {
                     b.forelder = null;
                 }
+
             }
 
             // Hvis p er venstre barnet til q
@@ -201,26 +203,15 @@ public class EksamenSBinTre<T> {
             // kopierer verdien i r til p
             p.verdi = r.verdi;
 
-
             // Hvis s ikke peker på p
             if (s != p) {
                 // Setter s sin venstre peker over til r sin høyre barn
                 s.venstre = r.høyre;
-                // Hvis r.høyre eksisterer
-                if (r.høyre != null) {
-                    // Da blir s sin venstre den nye forelderen til r.høyre.forelder
-                    r.høyre.forelder = s.venstre;
-                }
             }
             // Hvis s peker på p
             else {
                 // Flytter s sin høyre over til r sin høyre
                 s.høyre = r.høyre;
-                // Hvis r sin høyre eksisterer
-                if (r.høyre != null) {
-                    // Da blir s sin høyre den nye forelderen til r.høyre.forelder
-                    r.høyre.forelder = s.høyre;
-                }
             }
         }
 
