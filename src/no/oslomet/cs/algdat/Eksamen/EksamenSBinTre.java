@@ -142,7 +142,7 @@ public class EksamenSBinTre<T> {
         // finner ikke verdi
         if (p == null) return false;
 
-        // Hvis vi p ikke har barn eller p h har nøyaktig ett barn
+        // Hvis vi p ikke har barn eller p har nøyaktig ett barn
         if (p.venstre == null || p.høyre == null)  {
             // Barne noden
             Node<T> b;
@@ -160,6 +160,8 @@ public class EksamenSBinTre<T> {
             if (p == rot) {
                 rot = b;
 
+                // Hvis b eksisterer på vi sette b sin forelder peker
+                // til null
                 if (b != null) {
                     b.forelder = null;
                 }
@@ -244,6 +246,7 @@ public class EksamenSBinTre<T> {
     }
 
     public int antall(T verdi) {
+        // Kopierer programkode fra løsningsforslaget til oppgave 2 i ansvitt 5.2.6 fra kompendiet
         // Setter en peker på rot roden
         Node<T> p = rot;
         // Teller
@@ -269,10 +272,12 @@ public class EksamenSBinTre<T> {
         return teller;
     }
 
-    // Kopierte programkode fra løsningsforslaget til oppgave 2 i avsnitt 5.2.4 fra kompendiet
+
     public void nullstill() {
+        // Kopierte programkode fra løsningsforslaget til oppgave 2 i avsnitt 5.2.4 fra kompendiet
         if (!tom()) nullstill(rot);  // nullstiller
-        rot = null; antall = 0;      // treet er nå tomt
+        rot = null;
+        antall = 0;      // treet er nå tomt
         endringer++;   // treet er endret
     }
 
@@ -304,10 +309,12 @@ public class EksamenSBinTre<T> {
             if (p == f.høyre){
                 p = f;
             } else {
+                // p er venstre barn til f og p er enebarn
                 // Hvis p sin f.høyre ikke finnes. Da er f den neste
                 if (f.høyre == null) {
                     p = f;
                 } else {
+                    // p er venstre barn til f og p er ikke enebarn
                     // Hvis p sin f.høyre finnes. Da er f.høyre den neste
                     p = f.høyre;
 
