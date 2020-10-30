@@ -230,6 +230,7 @@ public class EksamenSBinTre<T> {
             return 0;
         }
 
+        // Kopierer kildekode fra løsningsforslaget til oppgave 3 i avsnitt 5.2.8 fra kompendiet
         // teller antall slettet
         int antallSlettet = 0;
 
@@ -241,8 +242,6 @@ public class EksamenSBinTre<T> {
         }
 
         return antallSlettet;
-
-        //throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     public int antall(T verdi) {

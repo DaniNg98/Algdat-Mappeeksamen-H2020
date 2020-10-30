@@ -77,10 +77,11 @@ må gjøre ligger i kodelinje 186. Hvis p ikke er venstre barnet til q setter vi
 I tillegg la jeg til endringer++ helt på slutten. Koden kjørte som den skulle etter at disse endringene var gjort.
 
 * Oppgave 6 b:  
-fjernAlle(T verdi) var relativt grei å skrive. Først så legger vi bare til en if-check som sjekker om treet er tomt. Hvis det stemmer returnerer vi 0
-med en gang. Videre oppretter vi en teller. Også bruker vi fjern(T verdi) som en hjelpemetode til å fjerne alle forekomster av verdien vi ønkser å
-fjerne. Siden fjern(T verdi) er en boolean passer det perfekt å bruke en while-løkke til å fjerne alle forekomster av verdien. Så når vi
-går inn i løkken while(fjern(verdi)) økes telleren hver gang vi finner en forekomst av verdien vi sletter. Til slutt returnerer vi telleren.  
+Først så legger vi bare til en if-check som sjekker om treet er tomt. Hvis det stemmer returnerer vi 0 med en gang. Så kopierer vi kildekode fra 
+løsningsforslaget til oppgave 3 i avsnitt 5.2.8 fra kompendiet. Koden oppretter en teller. Også bruker den fjern(T verdi) som en hjelpemetode til 
+å fjerne alle forekomster av verdien vi ønkser å fjerne. Siden fjern(T verdi) er en boolean bruker den en while-løkke til å fjerne alle forekomster 
+av verdien. Så når vi går inn i løkken while(fjern(verdi)) økes telleren hver gang vi finner en forekomst av verdien vi sletter. Til slutt returnerer 
+vi telleren.  
 
 * Oppgave 6 c:  
 Kopierer programkode fra løsningsforslaget til oppgave 2 i avsnitt 5.2.4 fra kompendiet. Her bruker vi en hjelpemetode nullstill(Node<T> p) som
