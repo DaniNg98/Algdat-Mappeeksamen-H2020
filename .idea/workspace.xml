@@ -4,9 +4,6 @@
     <list default="true" id="dd01bd83-09e7-4ec5-b1a1-1a99b3b102e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappeeksamen.bundle" beforeDir="false" afterPath="$PROJECT_DIR$/mappeeksamen.bundle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EksamenH2020/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Eksamen/EksamenSBinTre.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EksamenTest.oppgave6">
+  <component name="RunManager" selected="JUnit.EksamenTest">
     <configuration name="EksamenTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EksamenH2020" />
       <extension name="coverage">
@@ -134,8 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EksamenTest.oppgave6" />
         <item itemvalue="JUnit.EksamenTest" />
+        <item itemvalue="JUnit.EksamenTest.oppgave6" />
         <item itemvalue="JUnit.EksamenTest.oppgave5" />
         <item itemvalue="JUnit.EksamenTest.oppgave4" />
         <item itemvalue="JUnit.EksamenTest.oppgave3" />
@@ -168,7 +165,7 @@
       <workItem from="1603829511068" duration="127000" />
       <workItem from="1603829712839" duration="221000" />
       <workItem from="1603896549257" duration="11946000" />
-      <workItem from="1603919064794" duration="19167000" />
+      <workItem from="1603919064794" duration="22769000" />
     </task>
     <servers />
   </component>
